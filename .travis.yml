@@ -1,0 +1,27 @@
+language: python
+python:
+  - "3.6"
+  - "3.6-dev" # 3.6 development branch
+  - "3.7"
+  - "3.7-dev" # 3.7 development branch
+  - "3.8"
+  - "3.8-dev"
+  - "3.9-dev"
+  # - "nightly"
+# command to install dependencies
+install:
+  - pip install pymods
+  - pip install requests
+  - pip install bs4
+  - pip install sickle
+  - pip install pytest
+  - pip install pytest-cov
+  - pip install coveralls
+# command to run tests
+script: pytest --cov=citrus/
+after_success:
+  - coveralls
+notifications:
+  email:
+    on_success: change
+    on_failure: change
