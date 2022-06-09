@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <repox:exportedRecords xmlns:repox="http://repox.ist.utl.pt" set="fsu_digital_library" batchsize="-1" total="1000">
-  <!-- <repox:record id="oai:lib.fsu.edu.fsu_digital_library:oai:fsu.digital.flvc.org:fsu_252111" timestamp="2017-03-21">
-      <repox:metadata>
-        <mods xmlns="http://www.loc.gov/mods/v3">
-          <titleInfo>
-            <title>FSU_HPUA2008022_3836_01</title>
-          </titleInfo>
-        </mods>
-      </repox:metadata>
-    </repox:record> -->
+<!-- <repox:record id="oai:lib.fsu.edu.fsu_digital_library:oai:fsu.digital.flvc.org:fsu_252111" timestamp="2017-03-21">
+    <repox:metadata>
+      <mods xmlns="http://www.loc.gov/mods/v3">
+        <titleInfo>
+          <title>FSU_HPUA2008022_3836_01</title>
+        </titleInfo>
+      </mods>
+    </repox:metadata>
+  </repox:record> -->
   <repox:record id="oai:lib.fsu.edu.fsu_digital_library:oai:fsu.digital.flvc.org:fsu_24694" timestamp="2017-03-21">
     <repox:metadata>
-      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3"
-                 xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
         <titleInfo>
           <title>Fraternity fundraiser for injured student</title>
         </titleInfo>
@@ -39,12 +36,10 @@
           </role>
         </name>
         <name type="personal">
-          <namePart type="family">Winkler</namePart>
+         <namePart type="family">Winkler</namePart>
           <role>
-            <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">Author
-            </roleTerm>
-            <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">aut
-            </roleTerm>
+            <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">Author</roleTerm>
+            <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">aut</roleTerm>
           </role>
         </name>
         <typeOfResource>still image</typeOfResource>
@@ -81,9 +76,7 @@
         <subject>
           <geographicCode>7013938</geographicCode>
         </subject>
-        <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/NoC-US/1.0/">
-          http://rightsstatements.org/vocab/NoC-US/1.0/
-        </accessCondition>
+        <accessCondition type="use and reproduction" xlink:href="http://rightsstatements.org/vocab/NoC-US/1.0/">http://rightsstatements.org/vocab/NoC-US/1.0/</accessCondition>
         <accessCondition type="use and reproduction">Rights 4A</accessCondition>
         <recordInfo>
           <recordChangeDate>2015-10-26</recordChangeDate>
@@ -93,8 +86,7 @@
             <title>General Jean-Jacques-Germain Pelet-Clozeau Papers</title>
           </titleInfo>
           <location>
-            <physicalLocation>Special Collections &amp; Archives, Florida State University, Tallahassee, Florida
-            </physicalLocation>
+            <physicalLocation>Special Collections &amp; Archives, Florida State University, Tallahassee, Florida</physicalLocation>
             <url displayLabel="Finding Aid">https://archives.lib.fsu.edu/repositories/10/resources/531</url>
           </location>
         </relatedItem>
@@ -107,15 +99,12 @@
   </repox:record>
   <repox:record id="oai:lib.fsu.edu.fsu_digital_library:oai:fsu.digital.flvc.org:fsu_9420" timestamp="2017-03-21">
     <repox:metadata>
-      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3"
-                 xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4"
-                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
         <titleInfo>
           <title>Student Life Contact Sheet</title>
         </titleInfo>
         <titleInfo type='alternative'>
-          <title>Test 06</title>
+            <title>Test 06</title>
         </titleInfo>
         <identifier type="digitool">107201</identifier>
         <name>
@@ -125,8 +114,8 @@
           </role>
         </name>
         <name>
-          <namePart type='family'>Miguez</namePart>
-          <namePart type='given'>Matthew Roland</namePart>
+            <namePart type='family'>Miguez</namePart>
+            <namePart type='given'>Matthew Roland</namePart>
         </name>
         <typeOfResource>moving image</typeOfResource>
         <originInfo>
@@ -170,10 +159,7 @@
           <flvc:flvc>
             <flvc:owningInstitution>FSU</flvc:owningInstitution>
             <flvc:submittingInstitution>FSU</flvc:submittingInstitution>
-            <flvc:objectHistory source="digitool">admin_unit="FSU01", ingest_id="ing2981", creator="creator:FSUEDDIE",
-              creation_date="2008-10-29 19:08:24", modified_by="creator:FSUEDDIE", modification_date="2011-08-16
-              07:56:33"
-            </flvc:objectHistory>
+            <flvc:objectHistory source="digitool">admin_unit="FSU01", ingest_id="ing2981", creator="creator:FSUEDDIE", creation_date="2008-10-29 19:08:24", modified_by="creator:FSUEDDIE", modification_date="2011-08-16 07:56:33"</flvc:objectHistory>
           </flvc:flvc>
         </extension>
         <relatedItem type="host">
@@ -189,10 +175,7 @@
   </repox:record>
   <repox:record id="oai:lib.fsu.edu.fsu_digital_library:oai:fsu.digital.flvc.org:fsu_394576" timestamp="2017-03-21">
     <repox:metadata>
-      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3"
-                 xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4"
-                 xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
+      <mods:mods xmlns:mods="http://www.loc.gov/mods/v3" xmlns="http://www.loc.gov/mods/v3" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:flvc="info:flvc/manifest/v1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.4" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-4.xsd">
         <identifier type="IID">FSU_MSS_2015-007_S03_SS02_I003</identifier>
         <extension>
           <flvc:flvc>
@@ -208,17 +191,12 @@
           <namePart type="family">Houck</namePart>
           <namePart type="given">Davis W.</namePart>
           <role>
-            <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">
-              Photographer
-            </roleTerm>
-            <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">pht
-            </roleTerm>
+            <roleTerm type="text" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">Photographer</roleTerm>
+            <roleTerm type="code" authority="marcrelator" authorityURI="http://id.loc.gov/vocabulary/relators">pht</roleTerm>
           </role>
         </name>
         <typeOfResource>electro-magnetic vibrations in the range of visible frequencies</typeOfResource>
-        <genre valueURI="http://id.loc.gov/vocabulary/graphicMaterials/tgm007718" authority="gmgpc">Photographic
-          prints
-        </genre>
+        <genre valueURI="http://id.loc.gov/vocabulary/graphicMaterials/tgm007718" authority="gmgpc">Photographic prints</genre>
         <originInfo>
           <dateIssued encoding="w3cdtf">2013-05-27</dateIssued>
         </originInfo>
@@ -243,54 +221,44 @@
           </location>
         </relatedItem>
         <location>
-          <physicalLocation>Special Collections &amp; Archives, Florida State University Libraries, Tallahassee,
-            Florida.
-          </physicalLocation>
+          <physicalLocation>Special Collections &amp; Archives, Florida State University Libraries, Tallahassee, Florida.</physicalLocation>
         </location>
         <recordInfo>
           <descriptionStandard>dacs</descriptionStandard>
         </recordInfo>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh2007100199">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh2007100199">
           <topic>African Americans</topic>
           <topic>Civil rights</topic>
           <topic>History</topic>
           <temporal>20th century</temporal>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh85001942">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85001942">
           <topic>African Americans</topic>
           <topic>Crimes against</topic>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh85026371">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh85026371">
           <topic>Civil rights</topic>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh2008106179">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh2008106179">
           <topic>Journalism</topic>
           <topic>Political aspects</topic>
           <geographic>United States</geographic>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh2008115909">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh2008115909">
           <geographic>Mississippi</geographic>
           <topic>Race relations</topic>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh90002616">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh90002616">
           <topic>Racism in the press</topic>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh2008110371">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh2008110371">
           <topic>Rhetoric</topic>
           <topic>Political aspects</topic>
           <geographic>United States</geographic>
           <topic>History</topic>
           <temporal>20th century</temporal>
         </subject>
-        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects"
-                 valueURI="http://id.loc.gov/authorities/subjects/sh2010117082">
+        <subject authority="lcsh" authorityURI="http://id.loc.gov/authorities/subjects" valueURI="http://id.loc.gov/authorities/subjects/sh2010117082">
           <topic>Trials (Murder)</topic>
           <geographic>United States</geographic>
         </subject>

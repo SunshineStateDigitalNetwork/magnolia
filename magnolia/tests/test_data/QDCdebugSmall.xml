@@ -11,7 +11,7 @@
                            xmlns:dc="http://purl.org/dc/elements/1.1/"
                            xmlns:dcterms="http://purl.org/dc/terms/"
                            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                           xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd">
+                           xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd http://purl.org/net/oclcterms http://worldcat.org/xmlschemas/oclcterms/1.4/oclcterms-1.4.xsd">
         <dc:title>Vincent Gilpin letter to Patty Munroe, September 3, 1933</dc:title>
         <dc:creator>Gilpin, Vincent</dc:creator>
         <dcterms:abstract>Test 000</dcterms:abstract>
@@ -38,30 +38,21 @@
       </oai_qdc:qualifieddc>
     </repox:metadata>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/0"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/0" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/5"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/5" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/6"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/6" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/7"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/7" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:asm0447/39"
-                timestamp="2017-03-21">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:asm0447/39" timestamp="2017-03-21">
     <repox:metadata>
-      <oai_qdc:qualifieddc xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/"
-                           xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                           xmlns:dcterms="http://purl.org/dc/terms/"
-                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                           xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd">
+      <oai_qdc:qualifieddc xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd http://purl.org/net/oclcterms http://worldcat.org/xmlschemas/oclcterms/1.4/oclcterms-1.4.xsd">
         <dc:title>Jessie N. Munroe letter to Mrs. Gilpin, January 16, 1912</dc:title>
         <dc:creator>Munroe, Jessie N.</dc:creator>
         <dc:subject>Letters</dc:subject>
@@ -85,38 +76,27 @@
       </oai_qdc:qualifieddc>
     </repox:metadata>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/8"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/8" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/1"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/1" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/2"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/2" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/3"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/3" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/4"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/4" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/9"
-                timestamp="2017-03-21" deleted="true">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:chc0015/9" timestamp="2017-03-21" deleted="true">
     <repox:metadata/>
   </repox:record>
-  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:asm0447/25"
-                timestamp="2017-03-21">
+  <repox:record id="oai:lib.fsu.edu.umiami:oai:uofm.library.umiami:oai:merrick.library.miami.edu:asm0447/25" timestamp="2017-03-21">
     <repox:metadata>
-      <oai_qdc:qualifieddc xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/"
-                           xmlns:oai="http://www.openarchives.org/OAI/2.0/"
-                           xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
-                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                           xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd">
+      <oai_qdc:qualifieddc xmlns:oai_qdc="http://worldcat.org/xmlschemas/qdc-1.0/" xmlns:oai="http://www.openarchives.org/OAI/2.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://worldcat.org/xmlschemas/qdc-1.0/ http://worldcat.org/xmlschemas/qdc/1.0/qdc-1.0.xsd http://purl.org/net/oclcterms http://worldcat.org/xmlschemas/oclcterms/1.4/oclcterms-1.4.xsd">
         <dc:title>Jessie N. Munroe letter to Mrs. Gilpin, April 26, 1915</dc:title>
         <dc:creator>Thurston Moore</dc:creator>
         <dc:subject>Munroe, Patty; Letters</dc:subject>

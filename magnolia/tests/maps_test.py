@@ -17,8 +17,7 @@ class DCStandardMapTestCase(unittest.TestCase):
                                         'creator': [{'name': 'Lewis Carroll'}],
                                         'date': ['1974'],
                                         'description': ['1 postcard, postally unused',
-                                                        'caption: "Alligator Joe watching the Young Alligators '
-                                                        'Hatch."'],
+                                                        'caption: "Alligator Joe watching the Young Alligators Hatch."'],
                                         'format': ['Embroidery'],
                                         'identifier': 'oai:lib.fsu.edu.fiu:oai:uofm.library.fiu:oai:dpsobek:FI07050832_00001',
                                         'language': ['English'],
