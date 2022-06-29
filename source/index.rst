@@ -1,20 +1,18 @@
-.. magnolia documentation master file, created by
-sphinx-quickstart on Mon Jun  1 14:11:38 2020.
-You can adapt this file completely to your liking, but it should at least
-contain the root `toctree` directive.
-
 Welcome to magnolia's documentation!
-==================================
+====================================
+
+**magnolia** is a Python library for aggregating and collecting digital collections metadata
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   overview
    cli
    configuration
    maps
    custom_maps
-   magnolia_classes
+   api
 
 
 Indices and tables

@@ -40,11 +40,11 @@ def argument_parser():
     """Application level args"""
 
     arg_parser = argparse.ArgumentParser(
-        description='magnolia - Collective Information Transformation and Reconciliation Utility Service',
+        description='magnolia - Metadata aggregation and transformation utility',
         usage="[-p | --profile <profile> ] | [-h] [-v] [--test] | <command> [-h] | <subcommand>",
         add_help=True,
         formatter_class=CustomHelpFormatter)
-    subcommand_parsers = arg_parser.add_subparsers(help='sub-commands', dest='subcommand')
+    subcommand_parsers = arg_parser.add_subparsers(help='subcommands', dest='subcommand')
     subcommand_parsers.required = False
     subcommand_parsers.add_parser('status', help='show status')
 
@@ -88,8 +88,10 @@ def argument_parser():
 def config_list(config_parser):
     """
     Simple printing of config options
+
     :param config_parser:
     :return:
+
     """
     for section in config_parser.sections():
         print(f'\n[{section}]')
@@ -101,6 +103,7 @@ def config_list(config_parser):
 def interactive_run(magnolia_config, config_parser, subcommand, profile, *args, **kwargs):
     """
     Allows interactive selection of organization to harvest/transform
+
     :param profile:
     :param magnolia_config:
     :param config_parser:
@@ -108,6 +111,7 @@ def interactive_run(magnolia_config, config_parser, subcommand, profile, *args, 
     :param args:
     :param kwargs:
     :return:
+
     """
     i = 0
     print(f'Please select the number for an organization to {subcommand} from the list below:\n')
@@ -136,10 +140,12 @@ def interactive_run(magnolia_config, config_parser, subcommand, profile, *args, 
 def new_config_entry(config_file, options_list, config_fp):
     """
     Function to add entries to config file
+
     :param config_file:
     :param options_list:
     :param config_fp:
     :return:
+
     """
     with open(config_fp, 'w') as f:
         org_key = str(input('What is the organization key: >>> '))

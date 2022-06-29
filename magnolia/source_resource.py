@@ -60,13 +60,25 @@ class Record(object):
             return f'{self.__repr__()}'
 
     def dumps(self, indent=None):
+        """
+        Return object's JSON representation. Useful for debugging
+
+        :param indent: padding for pretty printing
+        :type indent: integer or None
+        :return: record JSON
+        :rtype: str
+        :meta hide-value:
+
+        """
         return json.dumps(self.__dict__, indent=indent)
 
     @property
     def data(self):
+        """Property for raw access to record's data at ``self.__dict__``"""
         return self.__dict__
 
     def keys(self):
+        """JSON key iterator"""
         for k in self.__dict__.keys():
             yield k
 
@@ -75,7 +87,7 @@ class DPLARecord(Record):
 
     def __init__(self, record=None):
         """
-        DPLA MAPv4 record class. Serves as the JSON-LD wrapper for magnolia.SourceResource. Includes some default
+        DPLA MAPv4 record class. Serves as the JSON-LD wrapper for :py:class:`SourceResource`. Includes some default
         attributes for convenience.
         """
         Record.__init__(self)
@@ -97,6 +109,9 @@ class SourceResource(Record):
     def __init__(self):
         """
         DPLA MAPv4 sourceResource record class
+
+        :raises SourceResourceRequiredElementException: if either required elements 'rights' or 'title' are missing
+
         """
         Record.__init__(self)
 
@@ -113,8 +128,10 @@ class RecordGroup(object):
 
     def __init__(self, records=None):
         """
+        List container for :py:class:`scenarios.MagnoliaRecord` records
 
-        :param records: List of :class:magnolia.scenarios.MagnoliaRecord or subclasses
+        :param list records: List of :py:class:`scenarios.MagnoliaRecord` records or subclassed records
+
         """
         object.__init__(self)
         if records:
@@ -133,6 +150,14 @@ class RecordGroup(object):
         self.records.append(record)
 
     def load(self, fp):
+        """
+        Load record group from file
+
+        :param str fp: File path
+        :return: :py:class:`magnolia.source_resource.RecordGroup`
+        :raises RecordGroupFileExtensionError: if the file does not have a `.json` or `.jsonl` extension
+        :raises FileNotFoundError: is the specified file doesn't exist
+        """
         if exists(fp):
             with open(fp) as f:
                 if splitext(fp)[-1] == '.jsonl':
@@ -151,9 +176,9 @@ class RecordGroup(object):
     def write_json(self, fp, prefix=None, pretty_print=False):
         """
 
-        :param fp:
-        :param prefix:
-        :param pretty_print:
+        :param str fp:
+        :param str prefix:
+        :param bool pretty_print:
         :return:
         """
         if not exists(fp):
@@ -182,8 +207,8 @@ class RecordGroup(object):
     def write_jsonl(self, fp, prefix=None):
         """
 
-        :param fp:
-        :param prefix:
+        :param str fp:
+        :param str prefix:
         :return:
         """
         if not exists(fp):

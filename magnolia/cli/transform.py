@@ -49,7 +49,20 @@ def build(custom_map_function, data, org, provider):
     return records
 
 
-def transform(magnolia_config, transformation_info, section, profile, verbosity, to_console=False):
+def transform(magnolia_config, org_transformation_info, org_key, profile, verbosity, to_console=False):
+    """
+    Magnolia transformation function
+
+    :param dict magnolia_config: Data from ``magnolia.cfg``. See :doc:`configuration` for more information.
+    :param dict org_transformation_info: Data from ``magnolia_scenarios.cfg``. Includes the key, value pairs
+        :py:data:`scenario`, :py:data:`map`, :py:data:`dataprovider`, and *(optional)*
+        :py:data:`intermediatedataprovider`. See :doc:`configuration` for more information.
+    :param str org_key: Section key in ``magnolia_scenarios.cfg``. Used to locate source data for transformation.
+    :param str profile: Profile invoked during run
+    :param int verbosity: Set verbosity
+    :param bool to_console: If set to ``True``, transformed data is written to the console rather than the file system.
+
+    """
     logger.debug('cli.transform called')
     IN_PATH = os.path.abspath(magnolia_config[profile]['InFilePath'])
     OUT_PATH = os.path.abspath(magnolia_config[profile]['OutFilePath'])
@@ -62,11 +75,11 @@ def transform(magnolia_config, transformation_info, section, profile, verbosity,
 
     # import config key, value pairs into DataProvider slot attrs
     o = magnolia.DataProvider()
-    o.key = section
-    o.map = transformation_info['Map']
-    o.data_provider = transformation_info['DataProvider']
+    o.key = org_key
+    o.map = org_transformation_info['Map']
+    o.data_provider = org_transformation_info['DataProvider']
     try:
-        o.intermediate_provider = transformation_info['IntermediateProvider']
+        o.intermediate_provider = org_transformation_info['IntermediateProvider']
     except KeyError:
         o.intermediate_provider = None
 
@@ -80,7 +93,7 @@ def transform(magnolia_config, transformation_info, section, profile, verbosity,
     ###############################################################################
 
     # use config scenario value to search for magnolia.scenarios class
-    o.scenario = getattr(magnolia, transformation_info['Scenario'])
+    o.scenario = getattr(magnolia, org_transformation_info['Scenario'])
     # use config map value to search for callable module & function with that name
     try:
         logger.debug(f'Trying to find custom map module {o.map}')

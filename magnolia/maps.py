@@ -1,7 +1,7 @@
 """
 Maps define how data exposed through `magnolia.Scenarios` are manipulated to build `magnolia.SourceResource` objects
 
-`magnolia.cli.transform` read the configuration file `magnolia_scenarios.cfg`.to determine which map to apply for which source
+`magnolia.cli.transform` read the configuration file `magnolia_scenarios.cfg` to determine which map to apply for which data source
 """
 import logging
 

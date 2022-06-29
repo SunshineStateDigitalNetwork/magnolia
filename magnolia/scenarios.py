@@ -16,6 +16,12 @@ logger.addHandler(logging.NullHandler())
 
 
 class Scenario:
+    """
+    Scenario superclass defining private dunder methods
+
+    :meta private:
+
+    """
 
     def __init__(self, records):
         self.records = records
@@ -38,8 +44,11 @@ class XMLScenario(Scenario):
 
     def __init__(self, xml_path):
         """
-        Generic class for parsing OIA-PMH XML. Serves as a iterable container for pymods.Records at self.records
-        :param xml_path: Path to an XML file of OAI-PMH records
+        Generic class for parsing OIA-PMH XML. Serves as a iterable container for :py:mod:`pymods.Records`
+        at self.records
+
+        :param str xml_path: Path to an XML file of OAI-PMH records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.XMLScenario")
         self.records = []
@@ -71,8 +80,10 @@ class SSDNDC(XMLScenario):
 
     def __init__(self, xml_path):
         """
-        Parser and container for magnolia.DC_Record records
-        :param xml_path: Path to an XML file of oai_dc records
+        Parser and container for :py:class:`magnolia.DC_Record` records
+
+        :param str xml_path: Path to an XML file of oai_dc records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.SSDNDC")
         XMLScenario.__init__(self, xml_path)
@@ -83,8 +94,10 @@ class SSDNQDC(XMLScenario):
 
     def __init__(self, xml_path):
         """
-        Parser and container for magnolia.QDC_Record records
-        :param xml_path: Path to an XML file of oai_qdc records
+        Parser and container for :py:class:`magnolia.QDC_Record` records
+
+        :param str xml_path: Path to an XML file of oai_qdc records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.SSDNQDC")
         XMLScenario.__init__(self, xml_path)
@@ -95,8 +108,10 @@ class SSDNMODS(XMLScenario):
 
     def __init__(self, xml_path):
         """
-        Parser and container for magnolia.MODS_Record records
-        :param xml_path: Path to an XML file of OAI-PMH MODS records
+        Parser and container for :py:class:`magnolia.MODS_Record` records
+
+        :param str xml_path: Path to an XML file of OAI-PMH MODS records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.SSDNMODS")
         XMLScenario.__init__(self, xml_path)
@@ -107,8 +122,10 @@ class BepressDC(SSDNDC):
 
     def __init__(self, xml_path):
         """
-        Bepress specific parser
-        :param xml_path: Path to an XML file of OAI-PMH MODS records
+        Bepress specific parser for :py:class:`BepressDCRecord`
+
+        :param str xml_path: Path to an XML file of BePress DC records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.BepressDC")
         SSDNDC.__init__(self, xml_path)
@@ -119,7 +136,11 @@ class SSDNPartnerMODSScenario(SSDNMODS):
 
     def __init__(self, xml_path):
         """
-        :param xml_path: Path to an XML file of OAI-PMH MODS records
+        Parser and container for :py:class:`SSDNMODSRecord` records
+
+
+        :param str xml_path: Path to an XML file of OAI-PMH MODS records
+
         """
         logger.debug(f"Loading {xml_path} with {__name__}.SSDNPartnerMODSScenario")
         SSDNMODS.__init__(self, xml_path)
@@ -129,6 +150,15 @@ class SSDNPartnerMODSScenario(SSDNMODS):
 class APIScenario(Scenario):
 
     def __init__(self, url, record_key, count_key=None, page_key=None):
+        """
+        Generic scenario class for API calls
+
+        :param str url: API URL
+        :param record_key: For navigating paged content
+        :param count_key: For navigating paged content
+        :param page_key: For navigating paged content
+
+        """
         logger.debug(f"Running {__name__}.APIScenario query to {url}")
         r = requests.get(url)
         data = json.loads(r.text.replace('\\u00a0', ''))
@@ -163,6 +193,12 @@ class APIScenario(Scenario):
 class InternetArchive(APIScenario):
 
     def __init__(self, collection):
+        """
+        Scenario class for calls to the Internet Archive's API
+
+        :param str collection: Designation of Internet Archive collection to pull metadata for
+
+        """
         url = f'https://archive.org/advancedsearch.php?q=collection:{collection}&output=json&rows=100'
         logger.debug(f"Running {__name__}.InternetArchive query to {url}")
         APIScenario.__init__(self, url, 'docs', 'numFound', 'page')
@@ -174,7 +210,9 @@ class MagnoliaRecord:
     def __init__(self, record):
         """
         Generic class for single records
+
         :param record: Generic record
+
         """
         self.record = record
 
@@ -186,8 +224,11 @@ class XMLRecord(MagnoliaRecord):
 
     def __init__(self, record):
         """
-        Generic class for single records. Makes record OAI-PMH identifier available through self.harvest_id attribute
+        Generic class for single records. Makes record OAI-PMH identifier available through
+        :py:attr:`self.harvest_id` attribute
+
         :param record: Generic record
+
         """
         MagnoliaRecord.__init__(self, record)
         self.harvest_id = self.record.oai_urn
@@ -197,8 +238,10 @@ class DCRecord(XMLRecord):
 
     def __init__(self, record):
         """
-        Dublin Core record class. Element text is available through self.element properties
+        Dublin Core record class. Element text is available through ``self.<element>`` properties
+
         :param record: oai_dc record
+
         """
         XMLRecord.__init__(self, record)
         self.oai_urn = self.record.oai_urn
@@ -221,46 +264,57 @@ class DCRecord(XMLRecord):
 
     @property
     def contributor(self):
+        """dc:contributor"""
         return self._value_list('contributor', dc)
 
     @property
     def creator(self):
+        """dc:contributor"""
         return self._value_list('creator', dc)
 
     @property
     def date(self):
+        """dc:date"""
         return self._value_list('date', dc)
 
     @property
     def description(self):
+        """dc:description"""
         return self._value_list('description', dc)
 
     @property
     def format(self):
+        """dc:format"""
         return self._value_list('format', dc)
 
     @property
     def identifier(self):
+        """dc:identifier"""
         return self._value_list('identifier', dc)
 
     @property
     def language(self):
+        """dc:language"""
         return self._value_list('language', dc)
 
     @property
     def place(self):
+        """dc:coverage"""
         return self._value_list('coverage', dc)
 
     @property
     def publisher(self):
+        """dc:publisher"""
         return self._value_list('publisher', dc)
 
     @property
     def rights(self):
+        """dc:rights"""
         return self._value_list('rights', dc)
 
     @property
     def subject(self):
+        """dc:subject"""
         try:
             return [re.sub("\( lcsh \)$", '', sub).strip(' ') for sub in
                     self.record.metadata.get_element('.//{0}subject'.format(dc), delimiter=';') if sub]
@@ -269,10 +323,17 @@ class DCRecord(XMLRecord):
 
     @property
     def title(self):
+        """dc:title"""
         return self._value_list('title', dc)
 
     @property
     def thumbnail(self):
+        """
+        some repositories implement a non-standard dc:identifier.thumbnail element for thumbnail URLs
+
+        :return: thumbnail URL or None
+
+        """
         try:
             return self.record.metadata.get_element('.//{0}identifier.thumbnail'.format(dc))[0]
         except TypeError:
@@ -280,6 +341,7 @@ class DCRecord(XMLRecord):
 
     @property
     def type(self):
+        """dc:type"""
         return self._value_list('type', dc)
 
 
@@ -287,25 +349,39 @@ class QDCRecord(DCRecord):
 
     def __init__(self, record):
         """
-        Qualified Dublin Core record class. Element text is available through self.element properties. Subclass of magnolia.DC_Record
+        Qualified Dublin Core record class. Element text is available through ``self.<element>`` properties.
+        Subclass of :py:class:`DC_Record`
+
         :param record: oai_qdc record
+
         """
         DCRecord.__init__(self, record)
 
     @property
     def abstract(self):
+        """dcterms:abstract"""
         return self._value_list('abstract', dcterms)
 
     @property
     def alternative(self):
+        """dcterms:alternative"""
         return self._value_list('alternative', dcterms)
 
     @property
     def is_part_of(self):
+        """dcterms:isPartOf"""
         return self._value_list('isPartOf', dcterms)
 
     @property
     def date(self):
+        """
+        General date parser returning the first date encountered in the order ``dcterms:created``, ``dcterms:issued``,
+        ``dcterms:date``, ``dc:date``, ``dcterms:available``, ``dcterms:dateAccepted``, ``dcterms:dateCopyrighted``,
+        ``dcterms:dateSubmitted``
+
+        For more customizable access to dates, use the :py:attr:`QDCRecord.dates` property
+
+        """
         date = None
         date_list = (f'{dcterms}created', f'{dcterms}issued', f'{dcterms}date', f'{dc}date', f'{dcterms}available',
                      f'{dcterms}dateAccepted', f'{dcterms}dateCopyrighted', f'{dcterms}dateSubmitted')
@@ -316,19 +392,32 @@ class QDCRecord(DCRecord):
         return date
 
     @property
+    def dates(self):
+        """
+        Customizable handling for date type elements in dcterms
+        Not Implemented
+
+        """
+        return NotImplemented
+
+    @property
     def extent(self):
+        """dcterms:extent"""
         return self._value_list('extent', dcterms)
 
     @property
     def medium(self):
+        """dcterms:medium"""
         return self._value_list('medium', dcterms)
 
     @property
     def place(self):
+        """dcterms:spatial"""
         return self._value_list('spatial', dcterms)
 
     @property
     def requires(self):
+        """dcterms:requires"""
         return self._value_list('requires', dcterms)
 
 
@@ -336,8 +425,10 @@ class MODSRecord(XMLRecord):
 
     def __init__(self, record):
         """
-        MODS record class making MAPv4 elements available through self.element properties
+        MODS record class making MAPv4 elements available through ``self.<element>`` properties
+
         :param record: OAI-PMH MODS record
+
         """
         XMLRecord.__init__(self, record)
         self.oai_urn = self.record.oai_urn
@@ -345,10 +436,12 @@ class MODSRecord(XMLRecord):
 
     @property
     def alternative(self):
+        """List of alternative titles"""
         return self.record.metadata.titles[1:]
 
     @property
     def collection(self):
+        """Name of archival collection or None"""
         try:
             return self.record.metadata.collection
         except (AttributeError, TypeError):
@@ -356,6 +449,10 @@ class MODSRecord(XMLRecord):
 
     @property
     def contributor(self):
+        """
+        List of contributor names as dicts: ``[{"@id": "Name URI", "name": "Name text"}, ...]``
+
+        """
         return [{"@id": name.uri, "name": name.text} if name.uri else {"name": name.text} for name in
                 filter(self._creator_filter, self.record.metadata.names)]
 
@@ -365,11 +462,19 @@ class MODSRecord(XMLRecord):
 
     @property
     def creator(self):
+        """
+        List of creator names as dicts: ``[{"@id": "Name URI", "name": "Name text"}, ...]``
+
+        """
         return [{"@id": name.uri, "name": name.text} if name.uri else {"name": name.text} for name in
                 self.record.metadata.get_creators]
 
     @property
     def date(self):
+        """
+        Date returned as a dict: ``{"displayDate": "date text", "begin": "start date", "end": "end date"}``
+
+        """
         if self.record.metadata.dates:
             date = self.record.metadata.dates[0].text
             if ' - ' in date:
@@ -383,35 +488,52 @@ class MODSRecord(XMLRecord):
 
     @property
     def description(self):
+        """List of abstracts"""
         return [abstract.text for abstract in self.record.metadata.abstract]
 
     @property
     def extent(self):
+        """Extent"""
         return self.record.metadata.extent
 
     @property
     def format(self):
+        """
+        List of genres as dicts: ``[{"@id": "Genre URI", "name": "Genre text"}, ...]``
+
+        """
         return [{'name': genre.text, '@id': genre.uri} if genre.uri else {'name': genre.text} for genre in
                 self.record.metadata.genre]
 
     @property
     def geographic_code(self):
+        """Geographic code"""
         return self.record.metadata.geographic_code
 
     @property
     def identifier(self):
+        """PURL"""
         return self.record.metadata.purl[0]
 
     @property
     def iid(self):
+        """IID identifier"""
         return self.record.metadata.iid
 
     @property
     def language(self):
+        """
+        List of languages as dicts: ``[{"name": "Language text", "iso_639_3": "Language code"}, ...]``
+
+        """
         return [{"name": lang.text, "iso_639_3": lang.code} for lang in self.record.metadata.language]
 
     @property
     def place(self):
+        """
+        Place names as ``{"name": "Place text"}``
+
+        """
         for subject in self.record.metadata.subjects:
             for c in subject.elem.getchildren():
                 if 'eographic' in c.tag:
@@ -419,6 +541,7 @@ class MODSRecord(XMLRecord):
 
     @property
     def pid(self):
+        """PID"""
         if self.record.metadata.pid:
             return self.record.metadata.pid
         else:
@@ -426,6 +549,7 @@ class MODSRecord(XMLRecord):
 
     @property
     def publisher(self):
+        """Publisher"""
         return self.record.metadata.publisher
 
     # sourceResource.relation
@@ -436,6 +560,7 @@ class MODSRecord(XMLRecord):
 
     @property
     def rights(self):
+        """Rights URI if available, otherwise rights text"""
         for rights in self.record.metadata.rights:
             if rights.uri:
                 return rights.uri
@@ -444,6 +569,10 @@ class MODSRecord(XMLRecord):
 
     @property
     def subject(self):
+        """
+        List of subjects as dicts: ``[{"@id": "Subject URI", "name": "Subject text"}, ...]``
+
+        """
         return [{"@id": subject.uri, "name": subject.text}
                 if subject.uri
                 else {"name": subject.text}
@@ -452,20 +581,26 @@ class MODSRecord(XMLRecord):
 
     @property
     def title(self):
+        """Title"""
         return self.record.metadata.titles[0]
 
     @property
     def type(self):
+        """Type of resource"""
         return self.record.metadata.type_of_resource
 
 
 class BepressDCRecord(DCRecord):
 
     def __init__(self, record):
+        """
+        Extension of :py:class:`DCRecord` class to expose BePress specific elements
+        """
         DCRecord.__init__(self, record)
 
     @property
     def description(self):
+        """dc:description.abstract"""
         try:
             return [re.sub(' {2}', ' ', self._clean_mark_up(abstract)).strip(' ') for abstract in
                     self.record.metadata.get_element('.//{0}description.abstract'.format(dc), delimiter=';')
@@ -475,12 +610,16 @@ class BepressDCRecord(DCRecord):
 
     @property
     def date(self):
+        """dc:date.created"""
         return re.sub('T[\\d*:]*Z', '', self._value_list('date.created', dc)[0])
 
 
 class SSDNMODSRecord(MODSRecord):
 
     def __init__(self, record):
+        """
+        Extension of :py:class:`MODSRecord`
+        """
         MODSRecord.__init__(self, record)
 
     @property
@@ -509,11 +648,15 @@ class SSDNMODSRecord(MODSRecord):
 class InternetArchiveRecord(MagnoliaRecord):
 
     def __init__(self, record):
+        """
+        Internet Archive record class
+        """
         MagnoliaRecord.__init__(self, record)
         self.harvest_id = f'ia:{self.identifier}'
 
     @property
     def identifier(self):
+        """Expose record identifier"""
         return self.record['identifier']
 
     def __getattr__(self, item):

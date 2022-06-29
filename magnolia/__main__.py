@@ -12,6 +12,7 @@ Other command options relate to setting and querying the program environment and
 The path to the magnolia configuration files must either be defined with the `MAGNOLIA_CONFIG` environment variable or exist in one of two default locations:
     * $HOME/.local/share/magnolia
     * the magnolia module directory
+
 """
 
 import configparser
@@ -20,6 +21,7 @@ import os
 import sys
 from pathlib import Path
 
+import magnolia
 from magnolia import cli
 
 logger = logging.getLogger('magnolia.app')
@@ -83,7 +85,7 @@ if __name__ == '__main__':
             magnolia_config[profile]
         except KeyError:
             logger.error(f"Profile: {profile} is not listed in {os.path.join(CONFIG_PATH, 'magnolia.cfg')}")
-            raise MagnoliaPofileError(profile, os.path.join(CONFIG_PATH, 'magnolia.cfg'))
+            raise magnolia.exceptions.MagnoliaPofileError(profile, os.path.join(CONFIG_PATH, 'magnolia.cfg'))
 
     # Set up logging
 
