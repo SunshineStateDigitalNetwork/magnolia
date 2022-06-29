@@ -21,8 +21,27 @@ You can see an overview of options by running ``python3 -m magnolia --help`` and
 Setting the configuration environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Magnolia uses a set of configuration files to direct it's behavior. It looks for these files in three places:
 
+1. A location specific by a ``MAGNOLIA_CONFIG`` environment variable
 
+.. note::
+
+    **Setting an environment variable**
+
+    Windows: ``set MAGNOLIA_CONFIG=/path/to/config/dir``
+
+    Mac: ``export MAGNOLIA_CONFIG=/path/to/config/dir``
+
+    Linux: ``export MAGNOLIA_CONFIG=/path/to/config/dir``
+
+2. The file path ``$HOME/.local/share/magnolia``
+
+3. The magnolia source directory
+
+If a suitable set of configuration files are not identified at those locations, magnolia will give you the option of
+creating empty config files at the ``$HOME/.local/share/magnolia`` path. Entries can be added to empty files through the
+CLI.
 
 See :doc:`cli` for full documentation of the CLI. Instructions for configuring the magnolia environment are detailed in
 :doc:`configuration`.
