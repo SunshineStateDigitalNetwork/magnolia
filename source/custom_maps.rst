@@ -111,6 +111,6 @@ Compare that to a stand alone Dublin Core map with additional processing and log
 Additional custom maps can be found and used for reference at
 `https://github.com/SunshineStateDigitalNetowrk/loren-ipsum <https://exmaple.org>`_.
 
-.. note:: Something something ... Module Resolution Order... Make sure the function has a unique name that will not collide with something coming before it in the MRO.
+.. note:: Make sure the custom map function has a unique name that will not collide with something coming before it in the MRO.
 
 Custom maps can be attached to a data source through the ``magnolia_scenarios.cfg`` configuration file.
