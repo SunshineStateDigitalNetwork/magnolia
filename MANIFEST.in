@@ -1,7 +1,7 @@
 include LICENSE AUTHORS.rst CHANGES.rst README.rst
-recursive-include docs *
+recursive-include source *
 recursive-include magnolia/tests *
-recursive-exclude docs *.pyc
-recursive-exclude docs *.pyo
+recursive-exclude docs *
+recursive-exclude magnolia/tests/__pychache__ *
 prune source
 prune build

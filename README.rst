@@ -13,7 +13,7 @@ Dependencies
 Installation & Use
 ------------------
 
-``python3 -m pip install magnolia``
+.. note:: Another project named magnolia exists in PyPi. This is not that magnolia.
 
 ``python3 -m magnolia``
 

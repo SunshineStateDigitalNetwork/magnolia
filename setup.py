@@ -1,10 +1,8 @@
 from setuptools import setup, find_packages
 
-from magnolia import __version__
-
 setup(
     name='magnolia',
-    version=__version__,
+    version='1.0.0',
     packages=find_packages(),
     url='http://github.com/SunshineStateDigitalNetwork/magnolia',
     license='MIT',
